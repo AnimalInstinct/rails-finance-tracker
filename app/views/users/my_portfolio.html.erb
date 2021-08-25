@@ -1,12 +1,12 @@
 <h1 class="pt-5">My portfolio</h1>
 <div class="search pt-5">
     <h3>Search Stocks</h3>
-    <%= form_tag '',method: :get do %>
+    <%= form_tag search_stock_path, method: :get do %>
     <div class="form-group row">
-        <div class="col-sm-9">
+        <div class="col-sm-9 pr-0">
             <%= text_field_tag :stock, params[:stock], placeholder: "Stock ticker symbol", autofocus: true, class: "form-control form-control-lg" %>
         </div>
-        <div class="col-sm-3">
+        <div class="col-sm-3 pl-0">
             <%= button_tag type: :submit, class: "btn btn-success btn-lg" do %>
             <%= fa_icon "search" %>
             <% end %>
@@ -14,3 +14,16 @@
     </div>
     <% end %>
 </div>
+<% if @stock %>
+<div class="row pt-5">
+    <div class="col-3">
+        <div class="card">
+            <div class="card-header"><%= @stock.ticker %></div>
+            <div class="card-body">
+                <p><%= @stock.name %></p>
+                <p><%= @stock.last_price %></p>
+            </div>
+        </div>
+    </div>
+</div>
+<% end %>
