@@ -1,8 +1,9 @@
 # Rails 6 Finance Stock Tracker
 
-## Stack
+## Versions
 Ruby 2.7
 Rails 6
+Bootstrap 5
 
 ## IEX API integration configuration
 

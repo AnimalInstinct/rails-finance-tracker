@@ -63,3 +63,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rubocop'
 
 gem 'iex-ruby-client'
+
+gem 'font-awesome-rails'
