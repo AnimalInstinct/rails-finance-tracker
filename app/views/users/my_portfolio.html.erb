@@ -1,12 +1,12 @@
-<h1 class="pt-5">My portfolio</h1>
+<h1 class="pt-3 text-muted">My portfolio</h1>
 <div class="search pt-5">
-    <h3>Search Stocks</h3>
-    <%= form_tag search_stock_path, method: :get do %>
+    <h3 class="mb-3 text-muted">Search Stocks</h3>
+    <%= form_tag search_stock_path, remote: true, method: :get do %>
     <div class="form-group row">
-        <div class="col-sm-9 pr-0">
+        <div class="col-sm-11 pr-0">
             <%= text_field_tag :stock, params[:stock], placeholder: "Stock ticker symbol", autofocus: true, class: "form-control form-control-lg" %>
         </div>
-        <div class="col-sm-3 pl-0">
+        <div class="col-sm-1 pl-0">
             <%= button_tag type: :submit, class: "btn btn-success btn-lg" do %>
             <%= fa_icon "search" %>
             <% end %>
@@ -14,4 +14,6 @@
     </div>
     <% end %>
 </div>
-<%= render 'users/result' %>
+<div id="results">
+
+</div>
