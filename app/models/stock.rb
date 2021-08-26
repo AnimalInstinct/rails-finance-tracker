@@ -5,8 +5,10 @@ class Stock < ApplicationRecord
       secret_token: Rails.application.credentials.iex[:secret_token],
       endpoint: Rails.application.credentials.iex[:endpoint]
     )
-    client.price(ticker_symbol)
-    new(ticker: ticker_symbol, name: client.company(ticker_symbol).company_name,
-        last_price: client.price(ticker_symbol))
+    begin
+      new(ticker: ticker_symbol, name: client.company(ticker_symbol).company_name,
+          last_price: client.price(ticker_symbol))
+    rescue StandardError => e
+    end
   end
 end
