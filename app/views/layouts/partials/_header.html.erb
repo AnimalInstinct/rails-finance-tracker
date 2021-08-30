@@ -14,6 +14,9 @@
       </ul>
       <% end %>
       <ul class="navbar-nav align-self-end ms-auto">
+        <li class="nav-item my-auto me-3">
+          <%= current_user.full_name %>
+        </li>
         <li class="nav-item">
           <% if user_signed_in? %>
           <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: "btn btn-secondary" %>

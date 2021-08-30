@@ -20,4 +20,9 @@ class User < ApplicationRecord
 
     stocks.where(id: stock.id).exists?
   end
+
+  def full_name
+    full_name = "#{last_name} #{last_name}" if first_name || last_name
+    'Anonymous'
+  end
 end
