@@ -13,21 +13,21 @@ class UsersController < ApplicationController
 
   def search
     if params[:search_request].present?
-      @user = User.first
-      if @user
+      @users = User.search(params[:search_request])
+      if @users
         respond_to do |format|
           format.js { render partial: 'users/users_result' }
         end
       else
         respond_to do |format|
           flash.now[:alert] = 'Please enter a valid user search request'
-          format.js { render partial: 'users/users_result' }
+          format.js { render partial: 'users/users_ result' }
         end
       end
     else
       respond_to do |format|
         flash.now[:alert] = 'Request is empty'
-        format.js { render partial: 'users/users_result' }
+        format.js { render partial: 'users/users_ result' }
       end
     end
   end
