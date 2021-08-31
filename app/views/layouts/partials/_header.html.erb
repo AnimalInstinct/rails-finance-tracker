@@ -11,6 +11,9 @@
         <li class="nav-item <%= 'active' if request.path == my_portfolio_path %>">
           <%= link_to "Portfolio", my_portfolio_path, {class: "nav-link"} %>
         </li>
+        <li class="nav-item">
+          <%= link_to "Members", users_path, {class: "nav-link"} %>
+        </li>
       </ul>
       <% end %>
       <ul class="navbar-nav align-self-end ms-auto">

@@ -1,0 +1,13 @@
+<%= render 'layouts/partials/messages' %>
+<% if @user %>
+<div class="row pt-5">
+    <div class="col-sm-12 col-md-6 col-lg-3">
+        <div class="card">
+            <div class="card-header"><%= @user.full_name %></div>
+            <div class="card-body">
+                <%= link_to 'Follow', '#', class: "btn btn-xs btn-success", method: :post %>
+            </div>
+        </div>
+    </div>
+</div>
+<% end %>
