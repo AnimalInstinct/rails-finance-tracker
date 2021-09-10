@@ -56,4 +56,8 @@ class User < ApplicationRecord
   def except_current_user(users)
     users.reject { |user| user.id == id }
   end
+
+  def friends_with(user)
+    friends.where(id: user.id).exists?
+  end
 end

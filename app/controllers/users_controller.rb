@@ -7,8 +7,8 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
-    @friends = current_user.friends
+    @users = current_user.friends
+    @users = current_user.except_current_user(@users)
   end
 
   def search
