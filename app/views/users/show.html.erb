@@ -12,4 +12,7 @@
       <% end %>
     </p>
   </div>
+  <% if !@tracked_stocks.empty? %>
+    <%= render 'stocks/table' %>
+  <% end %>
 </div>
