@@ -11,6 +11,10 @@ class UsersController < ApplicationController
     @users = current_user.except_current_user(@users)
   end
 
+  def show
+    @user = User.find(params[:id])
+  end
+
   def search
     if params[:search_request].present?
       @users = User.search(params[:search_request])
